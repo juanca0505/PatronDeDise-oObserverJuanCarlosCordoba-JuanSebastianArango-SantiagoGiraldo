@@ -1,4 +1,6 @@
-﻿public interface IObserver
+﻿using System;
+
+public interface IObserver
 {
-    void Update(Subject subject);
+    void Update(Article article);
 }

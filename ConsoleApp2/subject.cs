@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
 public class Subject
 {
     private List<IObserver> observers = new List<IObserver>();
@@ -15,12 +13,11 @@ public class Subject
         observers.Remove(observer);
     }
 
-    public void NotifyObservers()
+    public void NotifyObservers(Article article)
     {
         foreach (var observer in observers)
         {
-            observer.Update(this);
+            observer.Update(article);
         }
     }
 }
-

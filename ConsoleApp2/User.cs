@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class User : IObserver
 {
@@ -20,11 +21,11 @@ public class User : IObserver
         subscribedCategories.Remove(category);
     }
 
-    public void Update(Subject subject)
+    public void Update(Article article)
     {
-        if (subject is NewsArticle newsArticle && subscribedCategories.Contains(newsArticle.Category))
+        if (subscribedCategories.Contains(article.Category))
         {
-            Console.WriteLine($"{Name} ha sido notificada sobre el nuevo artículo: {newsArticle.Title}");
+            Console.WriteLine($"{Name} ha sido notificado(a) sobre el nuevo artículo: {article.Title}");
         }
     }
 }
